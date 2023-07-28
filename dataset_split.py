@@ -6,6 +6,10 @@ pd.set_option("max_colwidth", None)
 
 # Load the CSV file into a DataFrame
 df = pd.read_csv("output.csv", header=None, sep = 'delimiter' )
+
+# Remove '"' symbol
+df[0] = df[0].str.replace('"', '')
+
 df = df[df.iloc[:,0] != "."]
 # df.reset_index(drop=True, inplace=True)
 
